@@ -1,5 +1,5 @@
 <template>
-  <h1>这是首页</h1>
+  <h1>home page</h1>
   <TodoList />
 </template>
 <script setup>
