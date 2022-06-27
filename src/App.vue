@@ -1,15 +1,13 @@
   <template>
-  <button @click="loading">123</button>
+  <h1 @click="toggle">click</h1>
   <div>
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link>
   </div>
   <router-view></router-view>
 </template>
+
 <script setup>
-import useFavicon from './utils/favicon'
-let { favicon } = useFavicon()
-function loading() {
-  favicon.value = '/geek.png'
-}
+import { useFullscreen } from '@vueuse/core'
+const { isFullscreen, enter, exit, toggle } = useFullscreen()
 </script>
