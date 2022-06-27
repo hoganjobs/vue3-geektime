@@ -17,13 +17,16 @@
   </div>
 </template>
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watchEffect } from 'vue';
 
 let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 
 function useTodos() {
   let title = ref("")
-  let todos = ref([{ title: "first", done: false }])
+  let todos = ref(JSON.parse(localStorage.getItem('todos') || '[]'))
+  watchEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos.value))
+  })
   function addTodo() {
     todos.value.push({
       title: title.value,
