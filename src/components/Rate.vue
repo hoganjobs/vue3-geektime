@@ -1,12 +1,26 @@
 <template>
-  <div>{{ rate }}</div>
+  <div :style="fontStyle">{{ rate }}</div>
 </template>
 
 <script setup>
-import{ defineProps, computed } from 'vue'
+import { defineProps, computed } from 'vue'
 
 let props = defineProps({
-  value: Number
+  value: Number,
+  theme: { type: String, default: 'orange' }
 })
+console.log(props)
 let rate = computed(() => "★★★★★☆☆☆☆☆".slice(5 - props.value, 10 - props.value))
+const themeObj = {
+  'black': '#00',
+  'white': '#fff',
+  'red': '#f5222d',
+  'orange': '#fa541c',
+  'yellow': '#fadb14',
+  'green': '#73d13d',
+  'blue': '#40a9ff'
+}
+let fontStyle = computed(() => {
+  return `color: ${themeObj[props.theme]}`
+})
 </script>
