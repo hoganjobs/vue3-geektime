@@ -23,9 +23,9 @@ let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
 
 function useTodos() {
   let title = ref("")
-  let todos = useStorage('todos', [])
+  let todos = useStorage('todos', '[]')
 
-  function useStorage(name, value = []) {
+  function useStorage(name, value = '[]') {
     let data = ref(JSON.parse(localStorage.getItem(name) || value))
     watchEffect(() => {
       localStorage.setItem(name, JSON.stringify(data.value))

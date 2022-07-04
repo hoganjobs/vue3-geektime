@@ -11,3 +11,8 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 npm init @vitejs/app
 # vue -> vue
 ``` 
+
+```sh
+# class record：
+# 07 storage
+```
