@@ -1,7 +1,9 @@
 <template>
   <h1>home page</h1>
-  <TodoList />
+  <Rate :value="score" />
 </template>
 <script setup>
-import TodoList from '../components/TodoList.vue';
+import { ref } from 'vue'
+import Rate from '../components/Rate.vue';
+let score = ref(3)
 </script>

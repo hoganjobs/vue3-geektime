@@ -1,5 +1,5 @@
   <template>
-  <h1 @click="toggle">click</h1>
+  <h1 @click="toggle">click fullScreen</h1>
   <div>
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link>
